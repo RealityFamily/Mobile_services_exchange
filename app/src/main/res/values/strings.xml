@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">Tele2_Market</string>
+    <string name="app_name">Маркет Tele2</string>
+    <string name="Gigs">Гигабайты</string>
+    <string name="Mins">Минуты</string>
+    <string name="SMSs">SMS</string>
+    <string name="Requests">Мои заявки</string>
 </resources>

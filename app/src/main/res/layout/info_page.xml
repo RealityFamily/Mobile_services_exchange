@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+     android:layout_height="match_parent"
+     android:layout_width="match_parent">
+    <com.google.android.material.tabs.TabLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:background="@color/Background"
+        app:tabTextColor="@color/Text"
+        android:id="@+id/tabLayout">
+
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/GigTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Gigs"        />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/MinTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Mins"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/SMSTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/SMSs" />
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/RequestTab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Requests" />
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/viewPager">
+
+    </androidx.viewpager.widget.ViewPager>
+</LinearLayout>

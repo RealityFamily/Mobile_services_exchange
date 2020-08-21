@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/Background">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardBackgroundColor="@color/Primary"
+        android:layout_margin="15dp"
+        app:cardCornerRadius="10dp">
+        <GridLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:columnCount="2">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_rowSpan="2">
+
+                <TextView
+                    android:id="@+id/unit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1 ГБ"
+                    android:textColor="@color/Text"
+                    android:textSize="35sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="↑ 2.1 (15.43 %)"
+                    android:textSize="20sp"
+                    android:textColor="@color/Buy"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_gravity="end|center_vertical"
+                android:orientation="vertical"
+                android:layout_rowSpan="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Покупка: 50₽"
+                    android:textSize="20sp"
+                    android:textColor="@color/TextSecond" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Продажа: 25₽"
+                    android:textSize="20sp"
+                    android:textColor="@color/TextSecond" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_marginTop="15dp">
+                <TextView
+                    android:id="@+id/unitHave"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Доступно ГБ"
+                    android:textSize="20sp"
+                    android:textColor="@color/Text"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="524"
+                    android:textColor="@color/Text"
+                    android:textStyle="bold"
+                    android:textSize="25sp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_gravity="end|center_vertical"
+                android:orientation="vertical"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ваш баланс"
+                    android:textSize="20sp"
+                    android:textColor="@color/Text"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1911₽"
+                    android:textColor="@color/Text"
+                    android:textStyle="bold"
+                    android:textSize="25sp"/>
+            </LinearLayout>
+        </GridLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
