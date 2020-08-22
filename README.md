@@ -15,7 +15,19 @@
 
 ## Чекпоинт 1
 За ночь успели сделать:
+- доделали макеты экранов;  
+![alt text](https://github.com/RealityFamily/Tele2Hack/blob/feature/Verstka/Images/CheckPoint1/gig-check1.png?raw=true)
+![alt text](https://github.com/RealityFamily/Tele2Hack/blob/feature/Verstka/Images/CheckPoint1/minuts-check1.png?raw=true)
+![alt text](https://github.com/RealityFamily/Tele2Hack/blob/feature/Verstka/Images/CheckPoint1/sms-check1.png?raw=true)
+![alt text](https://github.com/RealityFamily/Tele2Hack/blob/feature/Verstka/Images/CheckPoint1/mylots-check1.png?raw=true)
+![alt text](https://github.com/RealityFamily/Tele2Hack/blob/feature/Verstka/Images/CheckPoint1/buy-check1.png?raw=true)
+![alt text](https://github.com/RealityFamily/Tele2Hack/blob/feature/Verstka/Images/CheckPoint1/sell-check1.png?raw=true)
+![alt text](https://github.com/RealityFamily/Tele2Hack/blob/feature/Verstka/Images/CheckPoint1/lotactive-check1.png?raw=true)
+
 - в android экраны Гигабайды, Минуты, СМС;
-- макет того как будут приходить оповещения, по окончание колличества пакета гигабайт, минут, смс, чтобы привлечь аудиторию с реальным спросом в покупку на маркет;
-- настройку тарифов чтобы продемонстрировать нашу идею по привлечению покупателей на маркет;
+![alt text](https://github.com/RealityFamily/Tele2Hack/blob/feature/Verstka/Images/CheckPoint1/android-check1.gif?raw=true "Экрны Гигабайды Минуты Смс 1.1")
+- макет того как будут приходить оповещения, по окончание колличества пакета гигабайт, минут, смс, чтобы привлечь аудиторию с реальным спросом в покупку на маркет;  
+![alt text](https://github.com/RealityFamily/Tele2Hack/blob/feature/Verstka/Images/CheckPoint1/push-chek1.png?raw=true)
+- настройку тарифов чтобы продемонстрировать нашу идею по привлечению покупателей на маркет;  
+![alt text](https://github.com/RealityFamily/Tele2Hack/blob/feature/Verstka/Images/CheckPoint1/konstructor-check1.png?raw=true)
 - Графики для экранов гигабайт, минут и смс (не успели интегрировать в основное приложение)
