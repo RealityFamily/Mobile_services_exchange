@@ -8,7 +8,9 @@ import com.google.gson.Gson;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Random;
 
@@ -34,9 +36,7 @@ public class Client {
     public Integer balance;
     public Integer income;
 
-    public Map<Integer, Integer> gigabyte_history;
-    public Map<Integer, Integer> minute_history;
-    public Map<Integer, Integer> sms_history;
+    public List<Transaction> history;
 
     public Client () {
 
@@ -49,11 +49,37 @@ public class Client {
         sold_sms = 0;
 
         balance = new Random().nextInt(1500);
-        income = new Random().nextInt(20);
+        income = 0;
 
-        gigabyte_history = new HashMap<>();
-        minute_history = new HashMap<>();
-        sms_history = new HashMap<>();
+        history = new ArrayList<>();
+        history.add(new Transaction(Transaction.Type.Buy, Unit.gigabytes, 2, 30));
+        history.add(new Transaction(Transaction.Type.Sell, Unit.gigabytes, 6, 90));
+        history.add(new Transaction(Transaction.Type.Buy, Unit.minutes, 1, 40));
+        history.add(new Transaction(Transaction.Type.Sell, Unit.minutes, 5, 200));
+        history.add(new Transaction(Transaction.Type.Sell, Unit.sms, 3, 120));
+
+        for (Transaction transaction: history) {
+            if (transaction.status == Transaction.Status.Closed) {
+                if (transaction.type == Transaction.Type.Sell) {
+                    switch (transaction.unit) {
+                        case gigabytes:
+                            sold_gigabytes += transaction.amount;
+                            break;
+                        case minutes:
+                            sold_minutes += transaction.amount * 50;
+                            break;
+                        case sms:
+                            sold_sms += transaction.amount * 50;
+                            break;
+                    }
+                    income += transaction.summ;
+                } else {
+                    income -= transaction.summ;
+                }
+            }
+        }
+
+        income = sold_gigabytes + sold_minutes + sold_sms;
     }
 
     public static void LoadToMemory(Context context, Client client) {
@@ -79,19 +105,19 @@ public class Client {
             case gigabytes:
                 gigabytes += amount;
                 balance -= summ;
-                gigabyte_history.put(amount, -summ);
+                history.add(new Transaction(Transaction.Type.Buy, unit, amount, summ));
                 break;
 
             case minutes:
                 minutes += amount;
                 balance -= summ;
-                minute_history.put(amount, -summ);
+                history.add(new Transaction(Transaction.Type.Buy, unit, amount, summ));
                 break;
 
             case sms:
                 sms += amount;
                 balance -= summ;
-                sms_history.put(amount, -summ);
+                history.add(new Transaction(Transaction.Type.Buy, unit, amount, summ));
                 break;
         }
 
@@ -108,17 +134,17 @@ public class Client {
         switch (unit){
             case gigabytes:
                 gigabytes -= Math.abs(amount);
-                gigabyte_history.put(amount, -summ);
+                history.add(new Transaction(Transaction.Type.Sell, unit, amount, summ));
                 break;
 
             case minutes:
                 minutes += Math.abs(amount);
-                minute_history.put(amount, -summ);
+                history.add(new Transaction(Transaction.Type.Sell, unit, amount, summ));
                 break;
 
             case sms:
                 sms += Math.abs(amount);
-                sms_history.put(amount, -summ);
+                history.add(new Transaction(Transaction.Type.Sell, unit, amount, summ));
                 break;
         }
 

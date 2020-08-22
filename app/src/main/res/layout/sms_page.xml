@@ -23,7 +23,9 @@
         android:paddingBottom="@dimen/upFAB"
         android:text="@string/Buy"
         android:textColor="@color/Text"
-        android:textSize="@dimen/Title" />
+        android:textSize="@dimen/Title"
+        android:textAllCaps="false"
+        android:textStyle="bold"/>
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/sellBTN"
@@ -42,7 +44,9 @@
         android:paddingBottom="@dimen/upFAB"
         android:text="@string/Sell"
         android:textColor="@color/Text"
-        android:textSize="@dimen/Title" />
+        android:textSize="@dimen/Title"
+        android:textAllCaps="false"
+        android:textStyle="bold"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"

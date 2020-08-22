@@ -9,12 +9,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardBackgroundColor="@color/Primary"
-        android:layout_margin="15dp"
-        app:cardCornerRadius="10dp">
+        android:layout_margin="@dimen/CardMargin"
+        app:cardCornerRadius="@dimen/CardCornerRadius">
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="15dp"
+            android:layout_margin="@dimen/CardMargin"
             android:columnCount="2">
             <LinearLayout
                 android:orientation="vertical"
@@ -24,16 +24,15 @@
                     android:id="@+id/unit"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1 ГБ"
                     android:textColor="@color/Text"
-                    android:textSize="35sp"
+                    android:textSize="@dimen/CardTitle"
                     android:textStyle="bold" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="↑ 2.1 (15.43 %)"
-                    android:textSize="20sp"
-                    android:textColor="@color/Buy"/>
+                    android:textSize="@dimen/CardText"
+                    android:textColor="@color/Buy"
+                    android:id="@+id/vector"/>
             </LinearLayout>
 
             <LinearLayout
@@ -44,60 +43,55 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Покупка: 50₽"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/CardText"
                     android:textColor="@color/TextSecond"
                     android:id="@+id/buy_price"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Продажа: 25₽"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/CardText"
                     android:textColor="@color/TextSecond"
                     android:id="@+id/sell_price"/>
             </LinearLayout>
 
             <LinearLayout
                 android:orientation="vertical"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="@dimen/CardMargin">
                 <TextView
-                    android:id="@+id/unitHave"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Доступно ГБ"
-                    android:textSize="20sp"
+                    android:text="Можно продать"
+                    android:textSize="@dimen/CardText"
                     android:textColor="@color/Text"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="524"
                     android:textColor="@color/Text"
                     android:textStyle="bold"
-                    android:textSize="25sp"
+                    android:textSize="@dimen/CardValues"
                     android:id="@+id/amount"/>
             </LinearLayout>
 
             <LinearLayout
                 android:layout_gravity="end|center_vertical"
                 android:orientation="vertical"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="@dimen/CardMargin">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Ваш баланс"
-                    android:textSize="20sp"
+                    android:textSize="@dimen/CardText"
                     android:textColor="@color/Text"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1911₽"
                     android:textColor="@color/Text"
                     android:textStyle="bold"
-                    android:textSize="25sp"
+                    android:textSize="@dimen/CardValues"
                     android:id="@+id/balance"/>
             </LinearLayout>
         </GridLayout>

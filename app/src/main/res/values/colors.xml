@@ -4,6 +4,10 @@
     <color name="Background">#030406</color>
     <color name="Text">#FFFFFF</color>
     <color name="TextSecond">#BBBABA</color>
+    <color name="AltText">#000000</color>
     <color name="Buy">#41A674</color>
+    <color name="BuyButton">#8041A674</color>
     <color name="Sell">#D72F4B</color>
+    <color name="SellButton">#80D72F4B</color>
+    <color name="Income">#FF59A3</color>
 </resources>

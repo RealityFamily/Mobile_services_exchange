@@ -2,7 +2,25 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar.Bridge">
         <!-- Customize your theme here. -->
-
     </style>
 
+    <style name="MyTabLayout" parent="Base.Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyTabTextAppearance</item>
+    </style>
+
+    <style name="MyTabTextAppearance" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@android:color/white</item>
+        <item name="textAllCaps">true</item>
+    </style>
+
+    <style name="MyAltTabLayout" parent="Base.Widget.Design.TabLayout">
+        <item name="tabTextAppearance">@style/MyAltTabTextAppearance</item>
+    </style>
+
+    <style name="MyAltTabTextAppearance" parent="TextAppearance.AppCompat.Button">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@android:color/black</item>
+        <item name="textAllCaps">true</item>
+    </style>
 </resources>

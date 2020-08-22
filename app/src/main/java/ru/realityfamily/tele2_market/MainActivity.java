@@ -6,6 +6,7 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.os.Bundle;
 
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.tabs.TabLayout;
 
 import ru.realityfamily.tele2_market.Adapters.ViewPagerAdapter;
@@ -21,6 +22,8 @@ public class MainActivity extends AppCompatActivity {
     TabLayout tabLayout;
     ViewPager viewPager;
 
+    public static BottomSheetBehavior mBottomSheetBehavior;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,9 @@ public class MainActivity extends AppCompatActivity {
 
         viewPager = findViewById(R.id.viewPager);
         tabLayout = findViewById(R.id.tabLayout);
+
+        mBottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottomSheet));
+        mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
 
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
         adapter.AddFragment(new GigFragment(), getResources().getString(R.string.Gigs));

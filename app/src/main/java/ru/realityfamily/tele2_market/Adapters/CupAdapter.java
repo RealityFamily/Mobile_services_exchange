@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -53,6 +54,9 @@ public class CupAdapter extends RecyclerView.Adapter<CupAdapter.ViewHolder> {
             holder.mSellOrders.setText("");
             holder.mBuyOrders.setText("");
 
+            holder.mDownSep.setVisibility(View.INVISIBLE);
+            holder.mUpSep.setVisibility(View.INVISIBLE);
+
             holder.mBuyOrders.setBackgroundColor(Color.TRANSPARENT);
             holder.mSellOrders.setClickable(false);
 
@@ -61,8 +65,10 @@ public class CupAdapter extends RecyclerView.Adapter<CupAdapter.ViewHolder> {
         }
         else {
             holder.mPrice.setText(mItems.get(position).getPrice().toString());
-            holder.mSellOrders.setText(mItems.get(position).getSell_orders().toString());
-            holder.mBuyOrders.setText(mItems.get(position).getBuy_orders().toString());
+            holder.mSellOrders.setText(mItems.get(position).getSell_orders() != 0 ?
+                    mItems.get(position).getSell_orders().toString() : "");
+            holder.mBuyOrders.setText(mItems.get(position).getBuy_orders() != 0 ?
+                    mItems.get(position).getBuy_orders().toString() : "");
 
             int width = mContext.getResources().getDisplayMetrics().widthPixels/3;
 
@@ -115,6 +121,9 @@ public class CupAdapter extends RecyclerView.Adapter<CupAdapter.ViewHolder> {
         RelativeLayout mBuyContainer;
         RelativeLayout mSellContainer;
 
+        ImageView mUpSep;
+        ImageView mDownSep;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -125,6 +134,9 @@ public class CupAdapter extends RecyclerView.Adapter<CupAdapter.ViewHolder> {
             mPriceContainer = itemView.findViewById(R.id.price_container);
             mBuyContainer = itemView.findViewById(R.id.buy_container);
             mSellContainer = itemView.findViewById(R.id.sell_container);
+
+            mUpSep = itemView.findViewById(R.id.upSep);
+            mDownSep = itemView.findViewById(R.id.downSep);
         }
     }
 

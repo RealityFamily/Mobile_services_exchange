@@ -13,13 +13,17 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 
 import ru.realityfamily.tele2_market.Adapters.RecyclerViewAdapter;
+import ru.realityfamily.tele2_market.MainActivity;
 import ru.realityfamily.tele2_market.R;
 import ru.realityfamily.tele2_market.Structures.Client;
 
 public class GigFragment extends Fragment {
+    ExtendedFloatingActionButton BuyBtn;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,14 @@ public class GigFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new RecyclerViewAdapter(Client.Unit.gigabytes));
+
+        BuyBtn = view.findViewById(R.id.buyBTN);
+        BuyBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                MainActivity.mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+            }
+        });
 
         return view;
     }

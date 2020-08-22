@@ -36,8 +36,9 @@ public class Market {
         gigabyte_sell = gigabyte_buy + rnd.nextInt(10) + 5;
         gigabyte_history = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
-            gigabyte_history.add(gigabyte_buy + rnd.nextInt(20) * (rnd.nextBoolean() ? 1 : -1));
+            gigabyte_history.add(gigabyte_buy + rnd.nextInt(5) * (rnd.nextBoolean() ? 1 : -1));
         }
+        gigabyte_history.add(gigabyte_buy);
         gigabyte_cup = new ArrayList<>();
         int delt = (gigabyte_sell - gigabyte_buy) / 2;
         gigabyte_cup.add(new CupElement());
@@ -61,6 +62,7 @@ public class Market {
         for (int i = 0; i < 6; i++) {
             minute_history.add(minute_buy + rnd.nextInt(20) * (rnd.nextBoolean() ? 1 : -1));
         }
+        minute_history.add(minute_buy);
         minute_cup = new ArrayList<>();
         delt = (minute_sell - minute_buy) / 2;
         minute_cup.add(new CupElement());
@@ -78,14 +80,15 @@ public class Market {
         minute_cup.add(new CupElement(minute_buy - delt * 2, (rnd.nextInt(50) + 100) / (rnd.nextInt(10) + 11), 0));
 
 
-        sms_buy = rnd.nextInt();
+        sms_buy = rnd.nextInt(5) + 25;
         sms_sell = sms_buy + rnd.nextInt(10);
         sms_history = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             sms_history.add(sms_buy + rnd.nextInt(20) * (rnd.nextBoolean() ? 1 : -1));
         }
+        sms_history.add(sms_buy);
         sms_cup = new ArrayList<>();
-        delt = (sms_sell - sms_buy) / 2;
+        delt = (sms_sell - sms_buy) / 5;
         sms_cup.add(new CupElement());
 
         sms_cup.add(new CupElement(sms_sell + delt * 2, 0, (rnd.nextInt(50) + 100) / (rnd.nextInt(10) + 11)));
