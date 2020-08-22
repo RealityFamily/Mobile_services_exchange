@@ -13,6 +13,8 @@ import ru.realityfamily.tele2_market.Fragments.GigFragment;
 import ru.realityfamily.tele2_market.Fragments.MinFragment;
 import ru.realityfamily.tele2_market.Fragments.RequestFragment;
 import ru.realityfamily.tele2_market.Fragments.SMSFragment;
+import ru.realityfamily.tele2_market.Structures.Client;
+import ru.realityfamily.tele2_market.Structures.Market;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,5 +39,8 @@ public class MainActivity extends AppCompatActivity {
         adapter.AddFragment(new RequestFragment(), getResources().getString(R.string.Requests));
         viewPager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewPager);
+
+        Client.LoadToMemory(this, new Client());
+        Market.LoadToMemory(this, new Market());
     }
 }

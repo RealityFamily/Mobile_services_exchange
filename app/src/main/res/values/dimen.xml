@@ -2,4 +2,6 @@
 <resources>
     <dimen name="Title">20sp</dimen>
     <dimen name="CornerRadius">20dp</dimen>
+    <dimen name="sideFAB">20dp</dimen>
+    <dimen name="upFAB">17dp</dimen>
 </resources>

@@ -9,12 +9,42 @@
     android:background="@color/Background">
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-        android:layout_width="wrap_content"
+        android:id="@+id/buyBTN"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="180dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="@dimen/sideFAB"
+        android:layout_marginTop="@dimen/upFAB"
+        android:layout_marginEnd="@dimen/sideFAB"
+        android:layout_marginBottom="@dimen/upFAB"
         android:backgroundTint="@color/Background"
+        android:paddingStart="@dimen/sideFAB"
+        android:paddingTop="@dimen/upFAB"
+        android:paddingEnd="@dimen/sideFAB"
+        android:paddingBottom="@dimen/upFAB"
+        android:text="@string/Buy"
         android:textColor="@color/Text"
-        android:text="купить"/>
+        android:textSize="@dimen/Title" />
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/sellBTN"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="180dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginStart="@dimen/sideFAB"
+        android:layout_marginTop="@dimen/upFAB"
+        android:layout_marginEnd="@dimen/sideFAB"
+        android:layout_marginBottom="@dimen/upFAB"
+        android:backgroundTint="@color/Background"
+        android:paddingStart="@dimen/sideFAB"
+        android:paddingTop="@dimen/upFAB"
+        android:paddingEnd="@dimen/sideFAB"
+        android:paddingBottom="@dimen/upFAB"
+        android:text="@string/Sell"
+        android:textColor="@color/Text"
+        android:textSize="@dimen/Title" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"

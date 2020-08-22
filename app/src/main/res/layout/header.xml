@@ -46,14 +46,16 @@
                     android:layout_height="wrap_content"
                     android:text="Покупка: 50₽"
                     android:textSize="20sp"
-                    android:textColor="@color/TextSecond" />
+                    android:textColor="@color/TextSecond"
+                    android:id="@+id/buy_price"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Продажа: 25₽"
                     android:textSize="20sp"
-                    android:textColor="@color/TextSecond" />
+                    android:textColor="@color/TextSecond"
+                    android:id="@+id/sell_price"/>
             </LinearLayout>
 
             <LinearLayout
@@ -73,7 +75,8 @@
                     android:text="524"
                     android:textColor="@color/Text"
                     android:textStyle="bold"
-                    android:textSize="25sp"/>
+                    android:textSize="25sp"
+                    android:id="@+id/amount"/>
             </LinearLayout>
 
             <LinearLayout
@@ -94,7 +97,8 @@
                     android:text="1911₽"
                     android:textColor="@color/Text"
                     android:textStyle="bold"
-                    android:textSize="25sp"/>
+                    android:textSize="25sp"
+                    android:id="@+id/balance"/>
             </LinearLayout>
         </GridLayout>
     </androidx.cardview.widget.CardView>

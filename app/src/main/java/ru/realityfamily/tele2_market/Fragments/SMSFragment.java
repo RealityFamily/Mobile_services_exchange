@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import ru.realityfamily.tele2_market.Adapters.RecyclerViewAdapter;
 import ru.realityfamily.tele2_market.R;
+import ru.realityfamily.tele2_market.Structures.Client;
 
 public class SMSFragment extends Fragment {
     @Override
@@ -28,7 +29,7 @@ public class SMSFragment extends Fragment {
         RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(new RecyclerViewAdapter("SMS"));
+        recyclerView.setAdapter(new RecyclerViewAdapter(Client.Unit.sms));
 
         return view;
     }

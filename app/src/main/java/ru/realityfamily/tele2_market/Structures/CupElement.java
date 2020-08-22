@@ -1,7 +1,7 @@
 package ru.realityfamily.tele2_market.Structures;
 
 public class CupElement {
-    public CupElement() {}
+    public CupElement() {price = 0; buy_orders = 0; sell_orders = 0;}
 
     public CupElement(Integer Price, Integer BuyOrders, Integer SellOrders) {
         price = Price;

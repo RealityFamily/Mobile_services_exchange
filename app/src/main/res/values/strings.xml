@@ -4,4 +4,7 @@
     <string name="Mins">Минуты</string>
     <string name="SMSs">SMS</string>
     <string name="Requests">Мои заявки</string>
+    <string name="Buy">купить</string>
+    <string name="Sell">продать</string>
+    <string name="SharedPreferences">RealityFamily</string>
 </resources>

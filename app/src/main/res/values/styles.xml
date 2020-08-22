@@ -1,10 +1,8 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.DayNight.DarkActionBar.Bridge">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/Primary</item>
-        <item name="colorPrimaryDark">@color/Background</item>
-        <item name="colorAccent">@color/Text</item>
+
     </style>
 
 </resources>

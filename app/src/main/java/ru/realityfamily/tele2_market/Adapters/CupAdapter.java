@@ -26,6 +26,8 @@ public class CupAdapter extends RecyclerView.Adapter<CupAdapter.ViewHolder> {
 
     public CupAdapter(List<CupElement> mItems) {
         this.mItems = mItems;
+        this.mItems.add(new CupElement());
+        this.mItems.add(new CupElement());
     }
 
     @NonNull
@@ -45,6 +47,17 @@ public class CupAdapter extends RecyclerView.Adapter<CupAdapter.ViewHolder> {
             holder.mBuyOrders.setText("Покупка");
             holder.mBuyOrders.setBackgroundColor(Color.TRANSPARENT);
             holder.mBuyOrders.setTextColor(ContextCompat.getColor(mContext, R.color.Buy));
+        }
+        else if (position == mItems.size() - 2 || position == mItems.size() - 1) {
+            holder.mPrice.setText("");
+            holder.mSellOrders.setText("");
+            holder.mBuyOrders.setText("");
+
+            holder.mBuyOrders.setBackgroundColor(Color.TRANSPARENT);
+            holder.mSellOrders.setClickable(false);
+
+            holder.mSellOrders.setBackgroundColor(Color.TRANSPARENT);
+            holder.mSellOrders.setClickable(false);
         }
         else {
             holder.mPrice.setText(mItems.get(position).getPrice().toString());
