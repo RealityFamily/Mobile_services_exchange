@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/Background"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Активные"
+        android:textColor="@color/TextSecond"
+        android:textSize="@dimen/CardText"
+        android:paddingStart="@dimen/ImageMargin"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ActiveList"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Завершенные"
+        android:textColor="@color/TextSecond"
+        android:textSize="@dimen/CardText"
+        android:paddingStart="@dimen/ImageMargin"
+        android:layout_marginTop="@dimen/ListsMargin"/>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/ClosedList"/>
+
+</LinearLayout>

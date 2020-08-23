@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="Title">20sp</dimen>
+    <dimen name="CornerRadius">20dp</dimen>
+    <dimen name="CardMargin">15dp</dimen>
+    <dimen name="CardCornerRadius">10dp</dimen>
+    <dimen name="sideFAB">20dp</dimen>
+    <dimen name="upFAB">17dp</dimen>
+    <dimen name="CardTitle">35sp</dimen>
+    <dimen name="CardText">20sp</dimen>
+    <dimen name="CardValues">25sp</dimen>
+    <dimen name="ImageMargin">10dp</dimen>
+    <dimen name="ColumnMargin">80dp</dimen>
+    <dimen name="ListsMargin">20dp</dimen>
+    <dimen name="GrapfHeight">325dp</dimen>
+</resources>

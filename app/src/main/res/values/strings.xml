@@ -1,3 +1,14 @@
 <resources>
-    <string name="app_name">Tele2_Market</string>
+    <string name="app_name">Маркет Tele2</string>
+    <string name="Gigs">Гигабайты</string>
+    <string name="Mins">Минуты</string>
+    <string name="SMSs">SMS</string>
+    <string name="Requests">Мои заявки</string>
+    <string name="Buy">Купить</string>
+    <string name="Sell">Продать</string>
+    <string name="SharedPreferences">RealityFamily</string>
+    <string name="CreateOrder">Создать заявку</string>
+    <string name="MyOrders">Мои заявки</string>
+    <string name="MarketOrder">Рыночная заявка</string>
+    <string name="LimitedOrder">Лимитированная заявка</string>
 </resources>
