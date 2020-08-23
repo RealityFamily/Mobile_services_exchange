@@ -204,13 +204,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
 
                 switch (mUnit) {
                     case gigabytes:
-                        viewHolder1.mRecyclerView.setAdapter(new CupAdapter(Market.GetFromMemory(mContext).gigabyte_cup));
+                        viewHolder1.mRecyclerView.setAdapter(new CupAdapter(Market.GetFromMemory(mContext).gigabyte_cup, Client.Unit.gigabytes));
                         break;
                     case minutes:
-                        viewHolder1.mRecyclerView.setAdapter(new CupAdapter(Market.GetFromMemory(mContext).minute_cup));
+                        viewHolder1.mRecyclerView.setAdapter(new CupAdapter(Market.GetFromMemory(mContext).minute_cup, Client.Unit.minutes));
                         break;
                     case sms:
-                        viewHolder1.mRecyclerView.setAdapter(new CupAdapter(Market.GetFromMemory(mContext).sms_cup));
+                        viewHolder1.mRecyclerView.setAdapter(new CupAdapter(Market.GetFromMemory(mContext).sms_cup, Client.Unit.sms));
                         break;
                 }
         }

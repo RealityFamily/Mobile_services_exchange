@@ -12,20 +12,30 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomsheet.BottomSheetBehavior;
+
 import java.util.List;
 
+import ru.realityfamily.tele2_market.Fragments.OrderFragment;
+import ru.realityfamily.tele2_market.MainActivity;
 import ru.realityfamily.tele2_market.R;
+import ru.realityfamily.tele2_market.Structures.Client;
 import ru.realityfamily.tele2_market.Structures.CupElement;
+import ru.realityfamily.tele2_market.Structures.Market;
+import ru.realityfamily.tele2_market.Structures.Transaction;
 
 public class CupAdapter extends RecyclerView.Adapter<CupAdapter.ViewHolder> {
 
     List<CupElement> mItems;
+    Client.Unit unit;
     Context mContext;
 
-    public CupAdapter(List<CupElement> mItems) {
+    public CupAdapter(List<CupElement> mItems, Client.Unit unit) {
+        this.unit = unit;
         this.mItems = mItems;
         this.mItems.add(new CupElement());
         this.mItems.add(new CupElement());
@@ -39,7 +49,7 @@ public class CupAdapter extends RecyclerView.Adapter<CupAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
         if (position == 0) {
             holder.mPrice.setText("Цена");
             holder.mSellOrders.setText("Продажа");
@@ -93,6 +103,32 @@ public class CupAdapter extends RecyclerView.Adapter<CupAdapter.ViewHolder> {
                 holder.mBuyOrders.setBackgroundColor(Color.TRANSPARENT);
                 holder.mSellOrders.setClickable(false);
             }
+            holder.mBuyOrders.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    OrderFragment fragment = new OrderFragment();
+                    switch (unit) {
+                        case gigabytes:
+                            fragment.AddInfo(Client.Unit.gigabytes, Transaction.Type.Sell,
+                                    Market.GetFromMemory(mContext).gigabyte_sell, mItems.get(position).getPrice(),
+                                    Client.GetFromMemory(mContext).balance);
+                            break;
+                        case minutes:
+                            fragment.AddInfo(Client.Unit.minutes, Transaction.Type.Sell,
+                                    Market.GetFromMemory(mContext).minute_sell, mItems.get(position).getPrice(),
+                                    Client.GetFromMemory(mContext).balance);
+                            break;
+                        case sms:
+                            fragment.AddInfo(Client.Unit.sms, Transaction.Type.Sell,
+                                    Market.GetFromMemory(mContext).sms_sell, mItems.get(position).getPrice(),
+                                    Client.GetFromMemory(mContext).balance);
+                            break;
+                    }
+                    ((AppCompatActivity)mContext).getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.Frame, fragment).commit();
+                    MainActivity.mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                }
+            });
 
 
             holder.mSellOrders.setLayoutParams(new RelativeLayout.LayoutParams(
@@ -103,6 +139,32 @@ public class CupAdapter extends RecyclerView.Adapter<CupAdapter.ViewHolder> {
                 holder.mSellOrders.setBackgroundColor(Color.TRANSPARENT);
                 holder.mSellOrders.setClickable(false);
             }
+            holder.mSellOrders.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    OrderFragment fragment = new OrderFragment();
+                    switch (unit) {
+                        case gigabytes:
+                            fragment.AddInfo(Client.Unit.gigabytes, Transaction.Type.Buy,
+                                    Market.GetFromMemory(mContext).gigabyte_buy, mItems.get(position).getPrice(),
+                                    Client.GetFromMemory(mContext).balance);
+                            break;
+                        case minutes:
+                            fragment.AddInfo(Client.Unit.minutes, Transaction.Type.Buy,
+                                    Market.GetFromMemory(mContext).minute_buy, mItems.get(position).getPrice(),
+                                    Client.GetFromMemory(mContext).balance);
+                            break;
+                        case sms:
+                            fragment.AddInfo(Client.Unit.sms, Transaction.Type.Buy,
+                                    Market.GetFromMemory(mContext).sms_buy, mItems.get(position).getPrice(),
+                                    Client.GetFromMemory(mContext).balance);
+                            break;
+                    }
+                    ((AppCompatActivity)mContext).getSupportFragmentManager().beginTransaction()
+                            .replace(R.id.Frame, fragment).commit();
+                    MainActivity.mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_EXPANDED);
+                }
+            });
         }
     }
 

@@ -15,6 +15,8 @@ import ru.realityfamily.tele2_market.Adapters.RequestAdapter;
 import ru.realityfamily.tele2_market.R;
 
 public class RequestFragment extends Fragment {
+    RecyclerView recyclerView;
+
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,11 +27,19 @@ public class RequestFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.request_page, container, false);
 
-        RecyclerView recyclerView = view.findViewById(R.id.recyclerView);
+        recyclerView = view.findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new RequestAdapter());
 
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(new RequestAdapter());
     }
 }

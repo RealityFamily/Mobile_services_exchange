@@ -19,10 +19,10 @@ import ru.realityfamily.tele2_market.Structures.Market;
 
 public class MainActivity extends AppCompatActivity {
 
-    TabLayout tabLayout;
     ViewPager viewPager;
 
     public static BottomSheetBehavior mBottomSheetBehavior;
+    public static TabLayout mTabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         getSupportActionBar().setCustomView(R.layout.action_bar);
 
         viewPager = findViewById(R.id.viewPager);
-        tabLayout = findViewById(R.id.tabLayout);
+        mTabLayout = findViewById(R.id.tabLayout);
 
         mBottomSheetBehavior = BottomSheetBehavior.from(findViewById(R.id.bottomSheet));
         mBottomSheetBehavior.setState(BottomSheetBehavior.STATE_HIDDEN);
@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         adapter.AddFragment(new SMSFragment(), getResources().getString(R.string.SMSs));
         adapter.AddFragment(new RequestFragment(), getResources().getString(R.string.Requests));
         viewPager.setAdapter(adapter);
-        tabLayout.setupWithViewPager(viewPager);
+        mTabLayout.setupWithViewPager(viewPager);
 
         Client.LoadToMemory(this, new Client());
         Market.LoadToMemory(this, new Market());

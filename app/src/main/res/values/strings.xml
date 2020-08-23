@@ -8,4 +8,7 @@
     <string name="Sell">Продать</string>
     <string name="SharedPreferences">RealityFamily</string>
     <string name="CreateOrder">Создать заявку</string>
+    <string name="MyOrders">Мои заявки</string>
+    <string name="MarketOrder">Рыночная заявка</string>
+    <string name="LimitedOrder">Лимитированная заявка</string>
 </resources>

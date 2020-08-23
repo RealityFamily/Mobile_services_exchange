@@ -40,7 +40,7 @@ public class Market {
         }
         gigabyte_history.add(gigabyte_buy);
         gigabyte_cup = new ArrayList<>();
-        int delt = (gigabyte_sell - gigabyte_buy) / 2;
+        int delt = (gigabyte_sell - gigabyte_buy) / 5;
         gigabyte_cup.add(new CupElement());
 
         gigabyte_cup.add(new CupElement(gigabyte_sell + delt * 2, 0, (rnd.nextInt(50) + 100) / (rnd.nextInt(10) + 11)));
@@ -64,7 +64,7 @@ public class Market {
         }
         minute_history.add(minute_buy);
         minute_cup = new ArrayList<>();
-        delt = (minute_sell - minute_buy) / 2;
+        delt = (minute_sell - minute_buy) / 5;
         minute_cup.add(new CupElement());
 
         minute_cup.add(new CupElement(minute_sell + delt * 2, 0, (rnd.nextInt(50) + 100) / (rnd.nextInt(10) + 11)));
@@ -81,7 +81,7 @@ public class Market {
 
 
         sms_buy = rnd.nextInt(5) + 25;
-        sms_sell = sms_buy + rnd.nextInt(10);
+        sms_sell = sms_buy + rnd.nextInt(10) + 5;
         sms_history = new ArrayList<>();
         for (int i = 0; i < 6; i++) {
             sms_history.add(sms_buy + rnd.nextInt(20) * (rnd.nextBoolean() ? 1 : -1));
